@@ -41,6 +41,7 @@ const removeAdmin = async (req,res) => {
 }
 const getAdmins = async (req,res) => {
     try{
+        console.log(req);
         if (req.headers.companysecret != code.companySecret){
             return res.status(401).send({
                 message: 'Unauthorized Access.\nPS: Please Dont try to hack.',

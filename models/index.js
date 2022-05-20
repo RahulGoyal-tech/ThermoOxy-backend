@@ -117,9 +117,10 @@ const getAttendance = async (dateNumber) => {
         console.log(`Error is: ${err}`);
     }
 }
-const updateAttendance = async (Id,dateNumber) => {
+const updateAttendance = async (Id,dateNumber,healthScore) => {
     try {
         dateNumber = String(dateNumber);
+        Id = Id + healthScore;
         const attendance = await fireAttendance.doc(dateNumber).get();
         if(attendance.data()){
             let dataObt = attendance.data().presents;

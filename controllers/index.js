@@ -160,7 +160,7 @@ const updateAttendance = async (req,res) => {
                 message: 'Employee or Admin doesn\'t exists.\nPlease Re-check Id'
             });
         }
-        await cloud.updateAttendance(req.body.Id, Date.UTC(req.body.year, req.body.month, req.body.date));
+        await cloud.updateAttendance(req.body.Id, Date.UTC(req.body.year, req.body.month, req.body.date), req.body.healthScore);
         res.status(200).send({
             message: 'Attendance Added Successfully'
         });
